@@ -1,0 +1,14 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const targets = document.querySelectorAll(".slide-in-right");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // 一度表示したら監視を外す
+      }
+    });
+  }, { threshold: 0.2 });
+
+  targets.forEach(target => observer.observe(target));
+});

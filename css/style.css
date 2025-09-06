@@ -11,6 +11,7 @@
             #HELPERS
         #MEDIA
             #IMAGES
+            #OVERLAY
         #COMPONENTS
             #BUTTONS
     #BASE LAYOUT
@@ -29,6 +30,7 @@
             #TOGGLE-NAV (Default for Small Screens)
     #SITE MAIN
         #TEXT RIGHT 
+        #KEYFRAMES
 --------------------------------- */
 
 /* SPLASH SCREEN */
@@ -111,6 +113,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: .5em 0;
+    font-family: karantina, sans-serif;
+     color: #cc0066;
+    font-weight: 500;
+    
 }
 
 h1 {
@@ -122,9 +128,10 @@ h1 {
 }
 
 h2 {
-    font-size: 2.25em;
+    font-size: 3.25em;
     line-height: 1.1;
-    
+    font-family: "Over the Rainbow", cursive;
+    font-weight: 700;
 }
 
 h3 {
@@ -133,13 +140,13 @@ h3 {
 }
 
 h4 {
-    font-size: 1.5em;
+    font-size: 2.25em;
     line-height: 1.3;
 }
 
 h5 {
-    font-size: 1.25em;
-    line-height: 1.35;
+    font-size: 2.25em;
+    line-height: 1.3;
 }
 
 h6 {
@@ -151,6 +158,10 @@ h6 {
 p {
     max-width: 66ch;
     border: 1px;
+    font-family: "monotype-grotesque-condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.6em;
 }
 
 strong {
@@ -206,8 +217,54 @@ a:hover {
 /* IMAGES */
 img {
     height: 100%;
-    max-width: 100%;
+    width: 100%;
+    /* object-fit: cover; */
 }
+
+.site-id .img {
+    height: 50px;
+}
+
+.img-wrapper {
+    margin: 2em 0;
+    border-radius: 8px;
+    max-width: 100%;
+    margin: .5em 0;
+    overflow: clip;
+}
+
+/* OVERLAY */
+.image-hover {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.image-hover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: 0.4s ease;
+}
+
+.hover-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 100%;
+}
+
+.hover-image .overlay {
+  opacity: 100%;
+}
+
+.image-hover:hover .main-image {
+  opacity: 0;
+}
+
 
 /* BUTTONS */
 .button, button, form input[type="submit"] {
@@ -248,7 +305,7 @@ body { margin: 0;}
 .project-page .container {
     max-width: 100%;
     margin: 0 auto;
-    padding:0 5%;
+    padding:7% 5%;
 }
 .container {
     max-width: 1000px;
@@ -256,9 +313,32 @@ body { margin: 0;}
     padding:0 4%;
 }
 
-.site-header  .container {
-    max-width: 1500px;
+.site-header .container {
+    width: 100%;
+    padding: 0 4%;  
 }
+
+.image-container {
+  display: flex;          /* 横並びにする */
+  justify-content: center; /* 中央寄せ */
+  gap: 20px;              /* 画像の間に余白 */
+}
+
+.image-container img {
+  width: 30%;             /* 横幅をそろえる */
+  height: auto;           /* 縦横比を維持 */
+  object-fit: cover;      /* はみ出し防止 */
+}
+
+.container-img img {
+  width: 50%;     /* 画像の横幅を半分にする */
+  height: auto;   /* 縦横比を維持 */
+  display: block; /* 余計な余白を消す */
+  margin: 0 auto; /* 中央に寄せたい場合 */
+}
+
+
+
 
 /*  MEDIA QUERIES */
 
@@ -276,7 +356,7 @@ body { margin: 0;}
     body {
         font-size: 112.5%; /* 18px */
     }    
-    .container {
+    container {
             /* max-width: 1200px; */
     }
 }
@@ -424,8 +504,11 @@ body.demo::before {
     list-style: none;
     display: flex;
     justify-content: center;
-    font-family: karantina, sans-serif;
     font-size: 1.5em;
+}
+
+.site-nav {
+    font-family: karantina, sans-serif;
 }
 
 .site-nav a {
@@ -451,6 +534,13 @@ section {
     width: 100%;
 }
 
+.hero-homepage {
+    padding: 5em 4%; 
+    text-align: center;
+    width: 100%;
+    height: 40svh;
+}
+
 .hero h1 {
     max-width: 100%;
     margin-left: auto;
@@ -463,14 +553,75 @@ section {
     margin-right: auto;
 }
 
-/*  BOX_01 */
+.hero .container {
+    width: 100%;
+}
 
-.box_01, p {
-    max-width: 750px;
+/*  BOX-1,2,3,4,5 */
+
+.container-a   {
+  display: flex;           /* 横並びにする */
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 5em;         
+}
+
+.box-01 {
+  flex: 1;                 /* 左を伸ばす */
+  max-width: 70%;          /* 左の幅を6割に固定 */
+}
+
+.box-02 {
+  flex: 1;                 /* 右も伸びるけど… */
+  max-width: 30%;          /* 空のスペースを右に確保 */
+}
+
+.box-03 {
+  flex: 1;              
+  width: 55%;         
+}
+
+.box-04 {
+  flex: 1;                 
+  width: 45%;          
+}
+.box-04 img {
+  width: 100%;       /* 横幅を親要素に合わせる */
+  height: auto;      /* 縦横比を維持 */
+  display: block;    /* 不要な余白を消す */
+  object-fit: contain; /* はみ出さず収めたい場合 */
+}
+
+.box-05 {
+    flex: 1;              
+  width: 55%;
+}
+
+.box-06 {
+    flex: 1;              
+  width: 45%;
+}
+
+.box-07 {
+  flex: 0 0 auto;   /* 画像サイズに合わせる */
+  width: 55%;       /* 必要に応じて調整 */
+}
+
+.box-08 {
+  flex: 0 0 auto;   /* 必要に応じて幅を固定 */
+  margin-left: auto; /* ← これで右端に寄る！ */
+  display: flex;
+}
+
+
+
+.box-01 p {
+    max-width: 1700px;
     margin-right: auto;
     font-family: karantina, sans-serif;
     font-style: normal;
-    font-size: 1.5em;
+    font-size: 4em;
+    line-height: 1.5;  
 }
 
 /* TOGGLE NAV */
@@ -686,6 +837,10 @@ article {
     padding: 60px;
 }
 
+.left-b img{
+    max-width: 500px;
+}
+
 .right-b {
     flex: 1;
     display: flex;
@@ -715,6 +870,7 @@ article {
 .layout-a {
     justify-content: flex-start; 
     text-align: left;
+    max-height: 600px;
 }
 
 .layout-b {
@@ -746,4 +902,46 @@ article {
   text-align: left;
   max-width: 300px;
 }
+
+/* ANIMATION */
+.slide-in-text {
+  display: inline-block;             /* アニメーションが効くようにする */
+  transform: translateX(-100%);      /* 左の外からスタート */
+  opacity: 0;                        /* 最初は透明 */
+  animation: slideInText 1.3s ease-out forwards;
+}
+
+@keyframes slideInText {
+  to {
+    transform: translateX(0);        /* 元の位置に戻す */
+    opacity: 1;                      /* フェードイン */
+  }
+}
+
+.slide-in-right {
+  transform: translateX(100px);  /* まずは100pxぐらいで試す */
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.slide-in-right.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* 初期状態：左に隠す */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease-out;
+}
+
+/* 表示されたらスライドイン */
+.slide-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
 
