@@ -57,6 +57,24 @@ document.addEventListener("DOMContentLoaded", () => {
   elements.forEach(el => observer.observe(el));
 });
 
+// Final Logo Animation
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll(".observe-me");
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        obs.unobserve(entry.target); // 1回だけアニメーションするなら
+      }
+    });
+  }, {
+    threshold: 0.2 // 要素の20%が見えたら発火
+  });
+
+  targets.forEach(el => observer.observe(el));
+});
+
 
 
 
