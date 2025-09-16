@@ -73,6 +73,7 @@ html, body {
     top: 0;
     background-color: rgb(255, 255, 255);
     position: sticky;
+    margin-left: 5em;
 }
 
 .right {
@@ -108,12 +109,11 @@ body {
 
 /* HEADINGS */
 
-h1, h2, h3, h4, h5, h6, h8, h9, h10 {
+h2, h3, h4, h5, h6, h8, h9, h10 {
     margin: .5em 0;
     font-family: karantina, sans-serif;
-     color: #cc0066;
+    color: #cc0066;
     font-weight: 500;
-    
 }
 
 h1 {
@@ -122,6 +122,7 @@ h1 {
     font-style: normal;
     font-size: 4em;
     color: #cc0066;
+    margin: 0;
 }
 
 h2 {
@@ -274,20 +275,20 @@ img {
 
 /* BUTTONS */
 .button, button, form input[type="submit"] {
-    background-color: rgba(0,0,204,1);
-    border: 1px solid rgba(0,0,204,1);
-    color: rgba(255,255,255,.8);
-    padding: 1em;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(227, 132, 24);
+    color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em;
     display: inline-block;
     margin: .5em .5em .5em 0;
     text-align: center;
-    border-radius: .5em;
+    border-radius: .2em;
 }
 
 .button:hover, button:hover, form input[type="submit"]:hover {
-    background-color: rgba(0,0,153,1);
-    border-color: rgba(0,0,153,1);
-    color: rgba(255,255,255,1);
+    background-color: rgba(227, 132, 24, 0.634);
+    border-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -314,7 +315,7 @@ body { margin: 0;}
     padding:7% 5%;
 }
 .container {
-    max-width: 1000px;
+    max-width: 1500px;
     margin: 0 auto;
     padding:0 4%;
 }
@@ -594,6 +595,13 @@ section {
     width: 100%;
 }
 
+.hero-homepage p {
+    font-family: karantina, sans-serif;
+    font-size: 2em;
+    margin-top: 0.2em;
+   
+}
+
 /*  BOX-1,2,3,4,5 */
 
 .container-a   {
@@ -801,7 +809,7 @@ article {
 
   /* FORMS */
   form {
-    max-width: 600px;
+    max-width: 900px;
     margin: 2em auto;
   }
   
@@ -812,7 +820,7 @@ article {
     box-sizing: border-box;
     display: block;
     width: 100%;
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   form label {
@@ -1056,7 +1064,7 @@ video {
     height: auto;
 }
 
-/* ABOUT */
+/* ABOUT SECTION*/
 #about .row {
   display: flex;
   justify-content: center; /* 横方向の中央寄せ */
@@ -1065,17 +1073,31 @@ video {
   align-items: flex-start; /* 上揃えにする */
 }
 
-#about .column {
-  max-width: 800px; /* 読みやすい幅に制限（好みで調整） */
+
+#about .body {
+    margin: 0;
 }
 
 #about p {
     margin: 0;
 }
 
-#About .img {
 
+#about {
+   background-color: #ffffff4a; /* 半透明の白 */
+   border-radius: 15px;         /* 角を丸くする */
+   /* padding-bottom: 0; */
 }
+
+#about img {
+   border-radius: 15px;
+   width: 80%;
+   padding-bottom: 10px;
+}
+
+
+
+
 
 
 
