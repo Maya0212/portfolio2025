@@ -577,19 +577,37 @@ body.demo::before {
     }
 }
 
-/* スマホ用（幅768px以下で縦一列） */
+/* スマホ用レスポンシブ調整 */
 @media (max-width: 768px) {
+  /* splitscreen を縦並びに */
   .splitscreen {
+    display: flex;
     flex-direction: column;
   }
 
+  /* 左右カラムを幅100%に */
   .splitscreen .left,
   .splitscreen .right {
     width: 100%;
+    margin-left: 0; /* PC用の余白をリセット */
   }
 
+  /* 作品カラムを縦1列に */
   .column.one-half {
     width: 100%;
+    max-width: 100%;
+  }
+
+  /* sticky パネルを通常表示に変更 */
+  .sticky-panel {
+    position: relative;
+    top: auto;
+    display: block;
+  }
+
+  /* 余計なパディングやマージンの調整 */
+  .right {
+    padding-right: 0;
   }
 }
 
