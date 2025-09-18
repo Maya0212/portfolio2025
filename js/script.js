@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, {
-    threshold: 0.2 // 要素の20%が見えたら発火
+    threshold: 0 // 要素の20%が見えたら発火
   });
 
   targets.forEach(el => observer.observe(el));
