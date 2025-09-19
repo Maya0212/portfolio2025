@@ -716,7 +716,7 @@ section {
 }
 
 .wireframe-images img {
-  width: 43%; /* 並べたい比率に調整 */
+  width: 34%; /* 並べたい比率に調整 */
   height: auto;
 }
 
