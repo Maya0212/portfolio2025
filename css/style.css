@@ -348,7 +348,7 @@ img {
 body { margin: 0;}
 
 /* CONTAINER */
-.project-page .container {
+.project-page .site-header .container {
     max-width: 100%;
     margin: 0 auto;
     padding:4% 5%;
@@ -1153,7 +1153,7 @@ video {
    padding-bottom: 10px;
 }
 
-.about-section .container {
+.about-section .site-header .container {
     max-width: 100%;
     margin: 0 auto;
     padding:0 5%;
