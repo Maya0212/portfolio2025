@@ -554,6 +554,8 @@ body.demo::before {
     padding-top: .25em;
     width: 80px;   /* 必要に応じてサイズを調整 */
     height: auto;   /* アスペクト比を保つ */
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 /* SITE NAV */
@@ -565,6 +567,7 @@ body.demo::before {
     display: flex;
     justify-content: center;
     font-size: 1.5em;
+
 }
 
 .site-nav {
@@ -964,7 +967,6 @@ article {
 
 .column {
   flex: 1;
-  min-width: 250px;
   /* max-width: 500px;  */
 }
 
