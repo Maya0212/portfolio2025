@@ -356,7 +356,8 @@ body { margin: 0;}
 .container {
     max-width: 1500px;
     margin: 0 auto;
-    padding:0 4%;
+    padding:0 7%;
+    padding-top: 20px;
 }
 
 .site-header .container {
@@ -978,6 +979,8 @@ article {
     justify-content: flex-start; 
     text-align: left;
     max-height: 600px;
+    margin-top: 2em;
+    margin-bottom: 4em;
 }
 
 .layout-b {
