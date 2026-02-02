@@ -188,9 +188,9 @@ h10 {
 
 
 /* PARAGRAPHS - SET HOTOZONTAL MEASURE */
-p {
-    /* max-width: 66ch; */
-}
+/* p {
+    max-width: 66ch;
+} */
 
 
 
@@ -404,9 +404,9 @@ body { margin: 0;}
     body {
         font-size: 137.5%; 
     }    
-    .container {
-            /* max-width: 1200px; */
-    }
+    /* .container {
+            max-width: 1200px;
+    } */
 }
 
 /* FOR DEMO PURPOSES ONLY */
